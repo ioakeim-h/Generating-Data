@@ -1,5 +1,5 @@
 # product-churn-switch
-Python script for finding product churn and switch for a leading telecommunication provider.
+<h3>Python script for finding product churn and switch for a leading telecommunication provider</h3>
 
 This was for a data science project where me and my team developed the necessary machine learning model to predict revenue three years into the future. Before doing so, however, we needed to generate new features (churn and switch) that would aid learning. 
 
