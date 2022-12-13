@@ -1,9 +1,11 @@
 # product-churn-switch
 <h3>Python script for finding product churn and switch for a leading telecommunication provider</h3>
 
-This was for a data science project where me and my team developed the necessary machine learning model to predict revenue three years into the future. Before doing so, however, we needed to generate new features (churn and switch) that would aid learning. 
+This was for a data science project where me and my team developed a machine learning model to predict revenue three years into the future. Before doing so, however, we needed to generate new features (churn and switch) that would aid learning. 
 
-We started to do this manually. For churn, we looked at the rows that had a value for product and went NaN a few months later. Similarly, for switch we were interested in seeing if the value for product was the same after some time. Realising how time-consuming this is to do manually, I was assigned the task to automate the process.
+We started to do this manually. For product churn, we looked at the rows that had a value for product and went NaN a few months later. Similarly, for product switch we were interested in seeing if the value for product was the same after some time. Realising how time-consuming this is to do manually, I was assigned the task to automate the process.
+
+The goal was to generate a new dataset for churn and switch.
 
 The desired result was to generate new datasets that include churn or switch for the years specified, for each x-month period. We were interested in the years 2018 to 2022 and needed to check for churn and switch after a 3, 6, 9, and 12-month period.
 
