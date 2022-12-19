@@ -1,5 +1,12 @@
 # Generating-Data
-<h3>Python script for finding product churn and switch for a leading telecommunication provider</h3>
+Python script for generating product churn and switch for a leading telecommunication provider
+
+
+generating data from existing csv files for product churn and product switch.
+
+
+
+This was part of a data science project
 
 This was for a data science project where me and my team developed a machine learning model to predict revenue three years into the future. Before doing so, however, we needed to generate new features (churn and switch) that would aid learning. 
 
