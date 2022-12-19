@@ -1,9 +1,18 @@
 # Generating-Data
 Python script for generating product churn and switch for a leading telecommunication provider
 
+This was part of a large project and 
+
+the goal was to extract new features (churn & switch) from certain csv files. These features were used by a machine learning model which predicted revenue three years into the future.
+
+
+The goal  is utilise certain csv files to generate new features that will be used by the machine learning model. People classified as churn or switch
+
+Product churn and product switch 
+
 
 generating data from existing csv files for product churn and product switch.
-
+One challenge was memory and thus the datasets needed to be processed one by one . There were also issues with performance, in that processing took a long time. Replacing the pandas merge function with join had a significant impact.
 
 
 This was part of a data science project
