@@ -1,39 +1,10 @@
 # Generating-Data
 Python script for generating product churn and switch for a leading telecommunication provider
 
-This was part of a large project and 
 
-the goal was to extract new features (churn & switch) from certain csv files. These features were used by a machine learning model which predicted revenue three years into the future.
+The goal of this program is to extract new features (churn & switch) from certain csv files. These features are used by a machine learning model which predicts revenue three years into the future. 
 
+<u>How it works</u>
 
-The goal  is utilise certain csv files to generate new features that will be used by the machine learning model. People classified as churn or switch
-
-Product churn and product switch 
-
-
-generating data from existing csv files for product churn and product switch.
-One challenge was memory and thus the datasets needed to be processed one by one . There were also issues with performance, in that processing took a long time. Replacing the pandas merge function with join had a significant impact.
-
-
-This was part of a data science project
-
-This was for a data science project where me and my team developed a machine learning model to predict revenue three years into the future. Before doing so, however, we needed to generate new features (churn and switch) that would aid learning. 
-
-We started to do this manually. For product churn, we looked at the rows that had a value for product and went NaN a few months later. Similarly, for product switch we were interested in seeing if the value for product was the same after some time. Realising how time-consuming this is to do manually, I was assigned the task to automate the process.
-
-The goal was to generate new datasets that include churn or switch for the years specified, for each x-month period. We were interested in the years 2018 to 2022 and needed to check for churn and switch after a 3, 6, 9, and 12-month period.
-
-The program does an excellent job of doing this. I even took this a step further so that it can run from command-line and added some useful user-input validation rules.
-
-
-<u>How the program could be improved:</u>
-<ul>
-<li>An issue with optimization is that when the program continues running for a second time, and the user decides to use the same data as before, some lines of code that are meant to prepare the data are executed again even if the dataset is already prepared from the previous loop (lines 23 to 32).</li>
-
-<li>Multiple datasets cannot be generated at once. The program would need to run multiple times.</li>
-</ul>
-
-Although these are no more than half a day's work, the program was more than enough for our purposes.
-
-Thanks for reading!
+From the date variable it extracts the month and the year and assigns these values to new columns. Using year and month, it then generates new features for churn for each 3, 6, 9 and 12-month period until the highest date is reached. Churn is decided if the values in product_standard go missing a few months later. Similarly, switch data are classified as those where the values in product_standard change, but are not missing.
 
