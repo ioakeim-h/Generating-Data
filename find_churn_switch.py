@@ -62,10 +62,9 @@ def save_memory(data):
 
 def adjust_data_to_dates(data, s_month, s_year, e_month, e_year, months_forward_list):
     
-    # Set multi index for joins
+    # Set index for joins
     data["circuit_id_idx"] = data["circuit_id"]
-    data["date_idx"] = data["date"]
-    data.set_index(["circuit_id_idx","date_idx"], inplace=True)
+    data.set_index("circuit_id_idx", inplace=True)
 
     for months_forward in months_forward_list: 
         print(f"months_forward: {months_forward}")
@@ -118,11 +117,9 @@ def find_churn_switch(data):
 
     for months_forward in months_forward_list:
 
-        #print(f"Finding churn for month: {months_forward}")
         # Find churn: if product missing, then churn (1), else remainer (0)
         data[f"churn_{months_forward}"] = np.where(data[f"product_standard_in_{months_forward}_months"].isna(), 1, 0)
         
-        #print(f"Finding switch for month: {months_forward}")
         # Find switch
         switchers = data["product_standard"] == data[f"product_standard_in_{months_forward}_months"]
         data[f"switch_{months_forward}"] = np.where(switchers, 0, 1)
@@ -130,8 +127,6 @@ def find_churn_switch(data):
         # where product_in_x_months is NaN -> churner
         churners = data[f"switch_{months_forward}"].loc[(data[f"switch_{months_forward}"]==1) & (data[f"product_standard_in_{months_forward}_months"].isna())]
         data.loc[churners.index, f"switch_{months_forward}"] = 0
-    
-    #print("Churn and switch done")
 
     return data
 
